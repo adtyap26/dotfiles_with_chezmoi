@@ -1,0 +1,17 @@
+dwm-alphasystray
+dwm-autostart
+dwm-center
+dwm-r1615-selfstart
+dwm-cyclelayouts
+dwm-shiftview
+dwm-fullgaps
+dwm-gridmode (#include "layouts.c" above layouts to work, gaps does not work in this layout)
+dwm-viewontag
+dwm-attachaside
+dwm-rotatestack
+dwm-alwayscenter
+dwm-movestack
+dwm-preserveonrestart-6.3.diff
+dwm-bar-height-6.2.diff
+dwm-pertag-20200914-61bb8b2
+

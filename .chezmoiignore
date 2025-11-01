@@ -1,0 +1,66 @@
+# Sensitive files - DO NOT TRACK
+# History files
+.bash_history
+.zsh_history
+.lesshst
+.python_history
+.mysql_history
+.psql_history
+.rediscli_history
+
+# SSH and security
+.ssh/
+.gnupg/
+.password-store/
+
+# Cloud and VPN credentials
+.aws/
+.azure/
+.config/AWSVPNClient/
+.config/gcloud/
+
+# API keys and tokens
+.netrc
+.npmrc
+.pypirc
+.gem/credentials
+.docker/config.json
+.config/github-copilot/
+.config/claude-desktop/
+.config/configstore/
+
+# Database clients
+.config/dbeaver/
+.config/pgadmin/
+.config/mysql/
+.config/postgresql/
+.mongorc.js
+.pgpass
+
+# IDEs with potentially sensitive data
+.config/Code/
+.vscode/
+.idea/
+
+# Communication apps with tokens
+.config/discord/
+.config/Slack/
+.config/teams/
+
+# Email clients
+.config/evolution/
+.config/thunderbird/
+.thunderbird/
+
+# Browser profiles (may contain passwords)
+.mozilla/
+.config/google-chrome/
+.config/chromium/
+
+# Other sensitive
+.local/share/keyrings/
+.pki/
+dconf
+.config/dconf/
+.cache/
+.local/share/Trash/
