@@ -1,0 +1,119 @@
+// Zed keymap - Neovim-style bindings
+// Leader key is space (in vim mode)
+[
+  // Workspace-level bindings
+  {
+    "context": "Workspace",
+    "bindings": {
+      // File operations
+      "space f f": "file_finder::Toggle",
+      "space f g": "pane::DeploySearch",
+      "space f b": "tab_switcher::Toggle",
+      "space e": "workspace::ToggleLeftDock",
+
+      // Terminal (leader + t + v/h)
+      "space t v": "terminal_panel::ToggleFocus",
+      "space t h": "terminal_panel::ToggleFocus",
+
+      // Window/pane navigation (Ctrl + hjkl)
+      "ctrl-h": "workspace::ActivatePaneLeft",
+      "ctrl-j": "workspace::ActivatePaneDown",
+      "ctrl-k": "workspace::ActivatePaneUp",
+      "ctrl-l": "workspace::ActivatePaneRight",
+
+      // Split windows
+      "space s v": "pane::SplitRight",
+      "space s h": "pane::SplitDown",
+      "space s x": "pane::CloseActiveItem",
+
+      // Buffer navigation
+      "shift-l": "pane::ActivateNextItem",
+      "shift-h": "pane::ActivatePrevItem",
+      "shift-q": "pane::CloseActiveItem",
+
+      // Save and quit
+      "space w": "workspace::Save",
+      "space q": "pane::CloseActiveItem",
+      "ctrl-q": "zed::Quit",
+
+      // Git (lazygit-style)
+      "space l g": "git_panel::ToggleFocus"
+    }
+  },
+
+  // Editor-level bindings (vim normal mode)
+  {
+    "context": "Editor && vim_mode == normal",
+    "bindings": {
+      // LSP: go to definition (gd)
+      "g d": "editor::GoToDefinition",
+      "space g d": "editor::GoToDefinition",
+      "g D": "editor::GoToDeclaration",
+      "g I": "editor::GoToImplementation",
+      "g r": "editor::FindAllReferences",
+
+      // Hover (K)
+      "shift-k": "editor::Hover",
+
+      // LSP actions (leader + l + ...)
+      "space l a": "editor::ToggleCodeActions",
+      "space l r": "editor::Rename",
+      "space l f": "editor::Format",
+      "space d f": "editor::GoToDiagnostic",
+      "space l j": "editor::GoToDiagnostic",
+      "space l k": "diagnostics::Deploy",
+
+      // Telescope-like search
+      "space f d": "editor::GoToDefinition",
+      "space f s": "buffer_search::Deploy",
+      "space s": "buffer_search::Deploy",
+
+      // Comment toggle (leader + /)
+      "space /": "editor::ToggleComments",
+
+      // Clear search highlights
+      "space h": "search::Dismiss",
+
+      // Better paste (don't replace register)
+      "p": "editor::Paste",
+      "x": "editor::Delete"
+    }
+  },
+
+  // Insert mode bindings
+  {
+    "context": "Editor && vim_mode == insert",
+    "bindings": {
+      // jk to escape (fast press)
+      "j k": "vim::NormalBefore"
+    }
+  },
+
+  // Visual mode bindings
+  {
+    "context": "Editor && vim_mode == visual",
+    "bindings": {
+      // Stay in indent mode
+      "<": "editor::Outdent",
+      ">": "editor::Indent",
+
+      // Comment toggle in visual mode
+      "space /": "editor::ToggleComments"
+    }
+  },
+
+  // Terminal bindings
+  {
+    "context": "Terminal",
+    "bindings": {
+      // Exit terminal mode with Escape
+      "escape": "terminal::Clear",
+
+      // Window navigation from terminal
+      "ctrl-h": "workspace::ActivatePaneLeft",
+      "ctrl-j": "workspace::ActivatePaneDown",
+      "ctrl-k": "workspace::ActivatePaneUp",
+      "ctrl-l": "workspace::ActivatePaneRight"
+    }
+  }
+]
