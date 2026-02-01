@@ -1,0 +1,54 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+//deepseek/deepseek-chat-v3-0324:free
+{
+    "agent": {
+        "model_parameters": [],
+        "default_model": {
+            "provider": "openrouter",
+            "model": "z-ai/glm-4.5-air:free"
+        },
+        "version": "2"
+    },
+    "icon_theme": "JetBrains New UI Icons (Light)",
+    "vim_mode": true,
+    "soft_wrap": "editor_width",
+    "ui_font_size": 14,
+    "buffer_font_size": 14,
+    "theme": {
+        "mode": "system",
+        "light": "NeoSolarized Dark",
+        "dark": "NeoSolarized Light"
+    },
+    "lsp": {
+        "gopls": {
+            "binary": {
+                "path": "/home/permaditya/.local/go/bin/gopls"
+            },
+            "settings": {
+                "gofumpt": true,
+                "hints": {
+                    "assignVariableTypes": true,
+                    "compositeLiteralFields": true,
+                    "compositeLiteralTypes": true,
+                    "constantValues": true,
+                    "functionTypeParameters": true,
+                    "parameterNames": true,
+                    "rangeVariableTypes": true
+                }
+            }
+        },
+        "java": {
+            "settings": {
+                "java.jdt.ls.lombokSupport.enabled:": true,
+                "java.trace.server": "verbose"
+            }
+        }
+    }
+}
