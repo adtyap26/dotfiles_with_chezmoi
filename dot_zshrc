@@ -56,6 +56,7 @@ $HOME/.rbenv/bin/:\
 /usr/bin/core_perl:\
 /var/lib/snapd/snap/bin:\
 $HOME/.cargo/bin:\
+$HOME/.bun/bin:\
 /usr/local/texlive/2022/bin/x86_64-linux:\
 $NPM_PACKAGES/bin:"
 
@@ -75,6 +76,7 @@ export ZSH="/home/$USER/.oh-my-zsh"
 #installation via paru -S oh-my-zsh-git
 #export ZSH=/usr/share/oh-my-zsh/
 # eval "$(starship init zsh)"
+eval "$(direnv hook zsh)"
 # export STARSHIP_CACHE=~/.starship/cache
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -783,3 +785,11 @@ complete -o nospace -C /usr/bin/terraform terraform
 
 # opencode
 export PATH=/home/permaditya/.opencode/bin:$PATH
+eval "$(direnv hook zsh)"
+
+# bun completions
+[ -s "/home/permaditya/.bun/_bun" ] && source "/home/permaditya/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"

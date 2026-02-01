@@ -329,7 +329,7 @@ assign [class="Firefox|Vivaldi-stable|Vivaldi-snapshot|Opera"]                  
 # USER APPLICATIONS TO START AT BOOT
 
 # ArcoLinux Welcome App
-exec --no-startup-id dex $HOME/.config/autostart/arcolinux-welcome-app.desktop
+#exec --no-startup-id dex $HOME/.config/autostart/arcolinux-welcome-app.desktop
 
 # Autotiling
 exec_always --no-startup-id autotiling
@@ -357,11 +357,16 @@ for_window [class="Spotify"] focus
 # applications that are not installed will not start
 # you may see a wheel - hashtag out things you do not want/need
 
+
 # Authentication dialog
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
+# snixembed for the OpenVPN3 indicator
+exec --no-startup-id snixembed
+exec --no-startup-id openvpn3-indicator
+
 # Updater
-exec --no-startup-id pamac-tray
+#exec --no-startup-id pamac-tray
 
 # bluetooth
 exec --no-startup-id blueman-applet
@@ -395,6 +400,9 @@ exec --no-startup-id volumeicon
 # exec --no-startup-id feh --bg-fill "$(find /home/permaditya/Pictures/wallpapers/ -type f | shuf -n 1)" &
 # for other Arch Linux based distros
 exec --no-startup-id feh --bg-fill /home/permaditya/Pictures/wallpapers/wallhaven-d85ewm.png &
+
+# yad calendar - float calendar popup
+for_window [class="Yad" title="yad-calendar"] floating enable
 
 # Polybar
 # exec_always --no-startup-id ~/.config/polybar/launch.sh &
@@ -487,12 +495,12 @@ bindsym $mod+Control+Print exec --no-startup-id flameshot gui
 # floating enabled from some programs - find with xprop
 
 for_window [class="pritunl"] floating enable
-for_window [class="keepassxc"] floating enable
+for_window [class="KeePassXC"] floating enable
 # for_window [class="Arcolinux-calamares-tool.py"] floating enable
 # for_window [class="Bleachbit"] floating disable
 # for_window [class="Blueberry.py"] floating enable
 # for_window [class="Brasero"] floating disable
-for_window [class="Galculator"] floating enable
+for_window [class="Gnome-calculator"] floating enable
 for_window [class="Gnome-disks"] floating disable
 for_window [class="^Gnome-font-viewer$"] floating enable
 for_window [class="^Gpick$"] floating enable
@@ -647,13 +655,17 @@ exec --no-startup-id env DRI_PRIME=1 picom --config ~/.config/picom/picom.conf -
 
 # bindsym control+mod1+o exec --no-startup-id ~/.config/i3/scripts/picom-toggle.sh
 
-################# bar appearance                   
+################# bar appearance
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-bar {
-        status_command i3status -c ~/.config/i3/i3status.conf
-}
+# Disabled in favor of polybar
+# bar {
+#         status_command i3status -c ~/.config/i3/i3status.conf
+# }
+
+# Launch polybar
+exec_always --no-startup-id ~/.config/polybar/launch.sh
 # bar {
 #     height 25
 #     workspace_buttons yes
