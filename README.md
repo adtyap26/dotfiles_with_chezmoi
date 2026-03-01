@@ -16,7 +16,7 @@ sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply adtyap26
 
 ## System
 
-|                 |                           |
+| Tool            | In Use                    |
 | --------------- | ------------------------- |
 | **OS**          | Pop!\_OS 22.04 LTS x86_64 |
 | **WM**          | i3 / dwm                  |
